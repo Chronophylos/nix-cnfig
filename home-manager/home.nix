@@ -84,6 +84,7 @@
 
     # nix related
     nix-output-monitor # replace nix. better log output
+    nil
 
     # top
     btop
@@ -133,7 +134,7 @@
       enable = true;
       userName = "Nikolai Zimmermann";
       userEmail = "nikolai@chronophylos.com";
-      includes = [ { path = "./git.config";} ];
+      includes = [{path = "~/Documents/nix-config/home-manager/git.config";}];
     };
 
     starship = {
@@ -156,18 +157,24 @@
       };
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "systemd" ];
+        plugins = ["git" "systemd"];
         theme = "robbyrussel";
       };
     };
 
     ssh = {
       enable = true;
+      forwardAgent = true;
       extraConfig = ''
         Host *
           IdentityAgent ~/.1password/agent.sock
       '';
-     };
+    };
+
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = ["chrono"];
+    };
 
     # let home manager install and manage itself
     home-manager.enable = true;
