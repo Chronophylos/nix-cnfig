@@ -108,12 +108,22 @@
     mpv
 
     # browsers
+    brave
     firefox
     thunderbird
     vscode
 
+    # communication
+    chatterino2
+    telegram-desktop
+
     # passwords
     _1password-gui
+    _1password
+
+    # music
+    spotify
+    spicetify-cli
   ];
 
   programs = {
@@ -128,7 +138,6 @@
     starship = {
       enable = true;
       settings = {
-        add_newline = false;
         aws.disabled = true;
         gcloud.disabled = true;
         line_break.disabled = true;
@@ -137,6 +146,19 @@
 
     # alacritty - the best terminal emulator (if it had ligatures)
     alacritty.enable = true;
+
+    zsh = {
+      enable = true;
+      enableCompletion = false; # enabled in oh-my-zsh
+      shellAliases = {
+        ls = "eza";
+      };
+      oh-my-zsh = {
+        enable = true;
+	plugins = [ "git" "systemd" ];
+	theme = "robbyrussel";
+      };
+    };
 
     # let home manager install and manage itself
     home-manager.enable = true;
