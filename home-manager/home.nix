@@ -133,11 +133,7 @@
       enable = true;
       userName = "Nikolai Zimmermann";
       userEmail = "nikolai@chronophylos.com";
-      extraConfig = {
-        push = {
-          autoSetupRemote = true;
-        };
-      };
+      includes = [ { path = "./git.config";} ];
     };
 
     starship = {
