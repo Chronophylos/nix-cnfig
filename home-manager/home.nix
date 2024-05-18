@@ -171,11 +171,6 @@
       '';
     };
 
-    _1password-gui = {
-      enable = true;
-      polkitPolicyOwners = ["chrono"];
-    };
-
     # let home manager install and manage itself
     home-manager.enable = true;
   };
