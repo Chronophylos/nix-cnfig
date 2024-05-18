@@ -165,10 +165,17 @@
       };
     };
 
+    ssh = {
+      enable = true;
+      extraConfig = ''
+        Host *
+          IdentityAgent ~/.1password/agent.sock
+      '';
+     };
+
     # let home manager install and manage itself
     home-manager.enable = true;
   };
-
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
