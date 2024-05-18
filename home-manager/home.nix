@@ -133,6 +133,11 @@
       enable = true;
       userName = "Nikolai Zimmermann";
       userEmail = "nikolai@chronophylos.com";
+      extraConfig = {
+        push = {
+          autoSetupRemote = true;
+        };
+      };
     };
 
     starship = {
@@ -155,8 +160,8 @@
       };
       oh-my-zsh = {
         enable = true;
-	plugins = [ "git" "systemd" ];
-	theme = "robbyrussel";
+        plugins = [ "git" "systemd" ];
+        theme = "robbyrussel";
       };
     };
 
