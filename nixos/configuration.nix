@@ -74,6 +74,14 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.wireless = {
+    enable = true;
+    networks = {
+      "WLAN-55-5" = {
+        pskRaw = "5cbded17fdb46aae910a08abfa3046540511e56aba13e40c488843d5a8af63d1";
+      };
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
