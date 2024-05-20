@@ -112,7 +112,7 @@
     vscode
 
     # communication
-    chatterino7
+    chatterino2
     telegram-desktop
 
     # music
