@@ -1,6 +1,4 @@
-final:
-prev
-{
+final: prev: {
   chatterino2 = prev.chatterino2.overrideAttrs (old: {
     src = prev.fetchFromGithub {
       owner = "SevenTV";
