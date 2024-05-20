@@ -177,15 +177,15 @@
       '';
     };
 
-    file.".config/1Password/ssh/agent.toml" = {
-      text = ''
-      [[ssh-keys]]
-      vault = "Private"
-      '';
-    };
-
     # let home manager install and manage itself
     home-manager.enable = true;
+  };
+
+  file.".config/1Password/ssh/agent.toml" = {
+    text = ''
+      [[ssh-keys]]
+      vault = "Private"
+    '';
   };
 
   # Nicely reload system units when changing configs
