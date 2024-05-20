@@ -84,7 +84,6 @@
 
     # nix related
     nix-output-monitor # replace nix. better log output
-    nil
 
     # top
     btop
@@ -128,6 +127,10 @@
 
     # other
     #obsidian
+    
+    # TODO: move to develop shell
+    nil
+    just
   ];
 
   programs = {
@@ -181,7 +184,7 @@
     home-manager.enable = true;
   };
 
-  file.".config/1Password/ssh/agent.toml" = {
+  home.file.".config/1Password/ssh/agent.toml" = {
     text = ''
       [[ssh-keys]]
       vault = "Private"
