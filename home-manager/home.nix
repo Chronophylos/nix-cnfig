@@ -25,7 +25,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      outputs.overlays.chatterino2-7tv
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -113,7 +112,7 @@
     vscode
 
     # communication
-    chatterino2
+    chatterino7
     telegram-desktop
 
     # music
