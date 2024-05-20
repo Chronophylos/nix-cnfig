@@ -7,7 +7,7 @@ final: prev: {
       rev = "a3ef8a138037924f9928f2d67cd96b1801062676";
       hash = "sha256-R/y1dZo/wevBiatBD3GZ52QAZ4NK5uG7gGKUjCHBlMA=";
       fetchSubmodules = true;
-      forceFetchGit = true;
+      deepClone = true;
     };
     nativeBuildInputs = old.nativeBuildInputs or [] ++ [prev.git];
   });
