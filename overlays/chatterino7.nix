@@ -8,6 +8,9 @@ final: prev: {
       hash = "sha256-R/y1dZo/wevBiatBD3GZ52QAZ4NK5uG7gGKUjCHBlMA=";
       fetchSubmodules = true;
     };
+    postFetch = ''
+      git submodule update --init --recursive
+    '';
     nativeBuildInputs = old.nativeBuildInputs or [] ++ [prev.git];
   });
 }
