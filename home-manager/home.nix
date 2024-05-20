@@ -12,6 +12,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.homeManagerModules._1password
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -117,10 +118,6 @@
     chatterino2
     telegram-desktop
 
-    # passwords
-    _1password-gui
-    _1password
-
     # music
     spotify
     spicetify-cli
@@ -141,9 +138,6 @@
       userName = "Nikolai Zimmermann";
       userEmail = "nikolai@chronophylos.com";
       includes = [{path = "~/Documents/nix-config/home-manager/git.config";}];
-      extraConfig = {
-        gpg."ssh".program = "${pkgs._1password-gui}/bin/op-ssh-sign";
-      };
     };
 
     starship = {
@@ -174,21 +168,10 @@
     ssh = {
       enable = true;
       forwardAgent = true;
-      extraConfig = ''
-        Host *
-          IdentityAgent ~/.1password/agent.sock
-      '';
     };
 
     # let home manager install and manage itself
     home-manager.enable = true;
-  };
-
-  home.file.".config/1Password/ssh/agent.toml" = {
-    text = ''
-      [[ssh-keys]]
-      vault = "Private"
-    '';
   };
 
   # Nicely reload system units when changing configs
