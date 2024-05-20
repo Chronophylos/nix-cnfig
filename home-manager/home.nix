@@ -127,7 +127,7 @@
 
     # other
     #obsidian
-    
+
     # TODO: move to develop shell
     nil
     just
