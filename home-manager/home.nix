@@ -125,6 +125,9 @@
     # music
     spotify
     spicetify-cli
+
+    # other
+    #obsidian
   ];
 
   programs = {
@@ -135,6 +138,9 @@
       userName = "Nikolai Zimmermann";
       userEmail = "nikolai@chronophylos.com";
       includes = [{path = "~/Documents/nix-config/home-manager/git.config";}];
+      extraConfig = {
+        gpg."ssh".program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+      };
     };
 
     starship = {
