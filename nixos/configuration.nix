@@ -163,6 +163,7 @@
     neovim
     curl
     wget
+    polkit-kde-agent
   ];
 
   programs._1password.enable = true;
@@ -174,7 +175,6 @@
   };
 
   # hyprland
-  programs.polkit-kde-agent.enable = true;
   programs.hyprland.enable = true;
   services.greetd = {
     enable = true;
