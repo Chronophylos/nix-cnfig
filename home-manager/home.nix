@@ -125,6 +125,12 @@
     # TODO: move to develop shell
     nil
     just
+
+    # fonts
+    vollkorn # fancy
+
+    fira-code-nerdfont # programming
+    inconsolata-nerdfont # terminal
   ];
 
   programs = {
@@ -187,7 +193,15 @@
     };
 
     # alacritty - the best terminal emulator (if it had ligatures)
-    alacritty.enable = true;
+    alacritty = {
+      # TODO: set theme
+      enable = true;
+      settings = {
+        font = {
+          #normal = {family = };
+        };
+      };
+    };
 
     zsh = {
       enable = true;
@@ -209,6 +223,11 @@
 
     # let home manager install and manage itself
     home-manager.enable = true;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    TERMINA = "alacritty";
   };
 
   # Nicely reload system units when changing configs
