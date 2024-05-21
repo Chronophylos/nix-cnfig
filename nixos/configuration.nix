@@ -151,6 +151,7 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIi6/87hPH7dliqGFMD2MAlMnwnSJP9hlQzc/1/CLqGS chrono"
       ];
       extraGroups = ["wheel" "networkmnager" "audio" "docker"];
+      shell = pkgs.nushell;
     };
   };
 
