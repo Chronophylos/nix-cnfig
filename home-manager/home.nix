@@ -130,6 +130,10 @@
     vollkorn # fancy
     fira-code-nerdfont # programming
     inconsolata-nerdfont # terminal
+
+    # rice
+    ## wallpaper
+    swww
   ];
 
   programs = {
@@ -185,8 +189,8 @@
       settings = {
         add_newline = true;
         character = {
-          success_symbol = "[➜](bold green)";
-          error_symbol = "[➜](bold red)";
+          success_symbol = "[➜](bold green) ";
+          error_symbol = "[➜](bold red) ";
         };
       };
     };
@@ -196,9 +200,7 @@
       # TODO: set color theme
       enable = true;
       settings = {
-        font = {
-          normal = {family = "Inconsolata Nerd Font Mono";};
-        };
+        font.normal.family = "Inconsolata Nerd Font Mono";
       };
     };
 
@@ -226,7 +228,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    TERMINA = "alacritty";
+    TERMINAL = "alacritty";
   };
 
   # Nicely reload system units when changing configs
