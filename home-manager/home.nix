@@ -3,6 +3,7 @@
 {
   outputs,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   # You can import other home-manager modules here
@@ -120,7 +121,7 @@
     spicetify-cli
 
     # other
-    #obsidian
+    pkgs-unstable.obsidian
 
     # TODO: move to develop shell
     nil
