@@ -128,7 +128,6 @@
 
     # fonts
     vollkorn # fancy
-
     fira-code-nerdfont # programming
     inconsolata-nerdfont # terminal
   ];
@@ -194,11 +193,11 @@
 
     # alacritty - the best terminal emulator (if it had ligatures)
     alacritty = {
-      # TODO: set theme
+      # TODO: set color theme
       enable = true;
       settings = {
         font = {
-          #normal = {family = };
+          normal = {family = "Inconsolata Nerd Font Mono";};
         };
       };
     };
