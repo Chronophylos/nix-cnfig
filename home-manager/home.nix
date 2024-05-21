@@ -1,9 +1,9 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
+  inputs,
   outputs,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   # You can import other home-manager modules here
@@ -121,7 +121,7 @@
     spicetify-cli
 
     # other
-    pkgs-unstable.obsidian
+    inputs.pkgs-unstable.obsidian
 
     # TODO: move to develop shell
     nil
