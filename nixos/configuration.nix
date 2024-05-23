@@ -75,14 +75,16 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  #networking.wireless = {
-  #  enable = true;
-  #  networks = {
-  #    "WLAN-55-5" = {
-  #      pskRaw = "5cbded17fdb46aae910a08abfa3046540511e56aba13e40c488843d5a8af63d1";
-  #    };
-  #  };
-  #};
+  networking.useDHCP = false;
+  systemd.network.wait-online.anyInterface = true;
+  # networking.wireless = {
+  #   enable = true;
+  #   networks = {
+  #     "WLAN-55-5" = {
+  #       pskRaw = "5cbded17fdb46aae910a08abfa3046540511e56aba13e40c488843d5a8af63d1";
+  #     };
+  #   };
+  # };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -100,12 +102,6 @@
     LC_PAPER = "de_DE.UTF-8";
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
   };
 
   # Configure console keymap
@@ -131,9 +127,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
   networking.hostName = "spitfire";
 
   users.users = {
@@ -143,7 +136,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIi6/87hPH7dliqGFMD2MAlMnwnSJP9hlQzc/1/CLqGS chrono"
       ];
-      extraGroups = ["wheel" "networkmnager" "audio" "docker"];
+      extraGroups = ["wheel" "audio" "video" "network" "networkmanager" "docker"];
       shell = pkgs.nushell;
     };
   };
@@ -163,7 +156,12 @@
     neovim
     curl
     wget
+
+    # auth agent
     polkit-kde-agent
+
+    # session
+    wev
   ];
 
   programs._1password.enable = true;
@@ -175,15 +173,23 @@
   };
 
   # hyprland
-  programs.hyprland.enable = true;
+  security.polkit.enable = true;
+  #programs.hyprland.enable = true;
   services.greetd = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet";
-        user = "chrono";
-      };
+    settings.default_session = {
+      #command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -s /etc/wayland-sessions";
+      command = "Hyprland";
+      user = "chrono";
     };
+  };
+  environment.etc."waylad-sessions/hyprland.desktop" = {
+    text = ''
+      [Desktop Entry]
+      Name=Hyprland
+      Exec=Hyprland
+      Type=Application
+    '';
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

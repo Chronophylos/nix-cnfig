@@ -1,9 +1,5 @@
 # Home-Manager Module for 1Password GUI and CLI with SSH Agent
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     _1password
     _1password-gui

@@ -10,6 +10,7 @@
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
     outputs.homeManagerModules._1password
+    outputs.homeManagerModules.hyprland
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -134,6 +135,7 @@
     # rice
     swww
     polkit-kde-agent
+    tofi
   ];
 
   programs = {
@@ -204,19 +206,6 @@
       };
     };
 
-    zsh = {
-      enable = true;
-      enableCompletion = false; # enabled in oh-my-zsh
-      shellAliases = {
-        ls = "eza";
-      };
-      oh-my-zsh = {
-        enable = true;
-        plugins = ["git" "systemd"];
-        theme = "robbyrussel";
-      };
-    };
-
     ssh = {
       enable = true;
       forwardAgent = true;
@@ -226,41 +215,22 @@
     home-manager.enable = true;
   };
 
-  wayland.windowManager.hyprland = {
-    settings = {
-      enable = true;
-      "$mod" = "SUPER";
-      bind =
-        [
-          "$mod, F, exec, firefox"
-          ", Print, exec, grimblast copy area"
-          "$mod, Return, exec, alacritty"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
-    };
-    systemd.variables = ["--all"];
-  };
-
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "alacritty";
     NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    QT_QPA_PLATFORM = "wayland;xcb";
   };
+
+  xdg.configFile."electron-flags.conf".text = ''
+    --ozone-platform-hint=auto
+    --enable-features=WebRTCPipeWireCapturer
+  '';
+  xdg.configFile."code-flags.conf".text = ''
+    --ozone-platform-hint=auto
+    --enable-features=WebRTCPipeWireCapturer
+  '';
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

@@ -4,4 +4,5 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   _1password = import ./1password.nix;
+  hyprland = import ./hyprland.nix;
 }
