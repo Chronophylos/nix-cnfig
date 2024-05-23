@@ -31,7 +31,7 @@
             )
             10)
         );
-      wayland.force_zero_scaling = true;
+      xwayland.force_zero_scaling = true;
     };
     systemd.variables = ["--all"];
   };
