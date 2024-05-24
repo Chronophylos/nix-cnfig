@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,1";
+      monitor = ",preferred,auto,1.5";
       input.kb_layout = "de";
       "$mod" = "SUPER";
       bind =
