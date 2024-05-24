@@ -3,11 +3,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,auto";
+      monitor = ",preferred,auto,1";
       input.kb_layout = "de";
-      exec-once = [
-        "${pkgs.swww}/bin/swww-daemon & sleep 0.1 & ${pkgs.swww}/bin/swww img ~/Documents/nix-config/wallpaper.webp"
-      ];
       "$mod" = "SUPER";
       bind =
         [
@@ -34,5 +31,15 @@
       xwayland.force_zero_scaling = true;
     };
     systemd.variables = ["--all"];
+  };
+
+  home.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = false;
+      splash = true;
+      preload = ["~/Documents/nix-config/wallpaper.jpg"];
+      wallpaper = [",~/Documents/nix-config/wallpaper.jpg"];
+    };
   };
 }
