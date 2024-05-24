@@ -68,4 +68,12 @@
       size = 11;
     };
   };
+
+  home.packages = with pkgs; [
+    # Qt Wayland Support
+    qt5-wayland
+    qt6-wayland
+    # bar
+    eww
+  ];
 }
