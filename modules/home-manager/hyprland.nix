@@ -33,7 +33,7 @@
     systemd.variables = ["--all"];
   };
 
-  home.hyprpaper = {
+  services.hyprpaper = {
     enable = true;
     settings = {
       ipc = false;
