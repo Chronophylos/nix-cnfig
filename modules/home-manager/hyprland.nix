@@ -33,6 +33,8 @@
     systemd.variables = ["--all"];
   };
 
+  programs.dconf.enable = true;
+
   services.hyprpaper = {
     enable = true;
     settings = {
