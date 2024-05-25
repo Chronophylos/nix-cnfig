@@ -10,6 +10,9 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    # NixOS Hardware
+    hardware.url = "github:nixos/nixos-hardware/master";
+
     # Home manager
     #home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.url = "github:nix-community/home-manager/master";
