@@ -239,11 +239,13 @@
 
   # Enable KDE Authentication Agent
   systemd.user.services.polkit-kde-authentication-agent-1 = {
-    description = "KDE Authentication Agent for polkit";
-    wantedBy = ["graphical-session.target"];
-    wants = ["graphical-session.target"];
-    after = ["graphical-session.target"];
-    serviceConfig = {
+    Unit = {
+      Description = "KDE Authentication Agent for polkit";
+      WantedBy = ["graphical-session.target"];
+      Wants = ["graphical-session.target"];
+      After = ["graphical-session.target"];
+    };
+    Service = {
       Type = "simple";
       ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
       Restart = "on-failure";
