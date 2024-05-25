@@ -205,6 +205,21 @@
     };
   };
 
+  # Thunar file manager
+  programs = {
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+      ];
+    };
+    xfconf.enable = true; # XFCE Config
+  };
+  services.tumbler.enable = true; # Thumbnail support for images
+  services.gvfs.enable = true; # Automounting
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
