@@ -13,6 +13,7 @@
     outputs.homeManagerModules.hyprland
     outputs.homeManagerModules.eww
     outputs.homeManagerModules.nushell
+    outputs.homeManagerModules.thunar
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -204,21 +205,6 @@
       TimeoutStopSec = 10;
     };
   };
-
-  # Thunar file manager
-  programs = {
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-      ];
-    };
-    xfconf.enable = true; # XFCE Config
-  };
-  services.tumbler.enable = true; # Thumbnail support for images
-  services.gvfs.enable = true; # Automounting
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
