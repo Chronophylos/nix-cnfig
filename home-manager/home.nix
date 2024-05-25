@@ -233,9 +233,6 @@
     --enable-features=WebRTCPipeWireCapturer
   '';
 
-  # Enable Gnome Keyring for storing secrets
-  services.gnome3.gnome-keyring.enable = true;
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
