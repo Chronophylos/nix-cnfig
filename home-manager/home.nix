@@ -211,15 +211,15 @@
       enable = true;
       associations.added = {
         "inode/directory" = ["thunar.desktop"];
-        "application/pdf" = ["zathura.desktop"];
-        "image/jpeg" = ["qview.desktop"];
-        "image/webp" = ["qview.desktop"];
+        "application/pdf" = ["org.pwmt.zathura.desktop"];
+        "image/jpeg" = ["com.interversehq.qView.desktop"];
+        "image/webp" = ["com.interversehq.qView.desktop"];
       };
       defaultApplications = {
         "inode/directory" = ["thunar.desktop"];
-        "application/pdf" = ["zathura.desktop"];
-        "image/jpeg" = ["qview.desktop"];
-        "image/webp" = ["qview.desktop"];
+        "application/pdf" = ["org.pwmt.zathura.desktop"];
+        "image/jpeg" = ["com.interversehq.qView.desktop"];
+        "image/webp" = ["com.interversehq.qView.desktop"];
       };
     };
   };

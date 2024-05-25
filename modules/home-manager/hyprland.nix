@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       monitor = ",preferred,auto,1.5";
+      exec-once = "${pkgs.eww}/bin/eww open bar";
       input.kb_layout = "de";
       "$mod" = "SUPER";
       bind =
