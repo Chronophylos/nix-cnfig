@@ -234,7 +234,7 @@
   '';
 
   # Enable Gnome Keyring for storing secrets
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome3.gnome-keyring.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
