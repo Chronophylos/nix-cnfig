@@ -104,8 +104,8 @@
 
     # viewers
     zathura
-    sxiv
     mpv
+    qview
 
     # browsers
     brave
@@ -212,14 +212,14 @@
       associations.added = {
         "inode/directory" = ["thunar.desktop"];
         "application/pdf" = ["zathura.desktop"];
-        "image/jpeg" = ["sxiv"];
-        "image/webp" = ["sxiv -a"];
+        "image/jpeg" = ["qview.desktop"];
+        "image/webp" = ["qview.desktop"];
       };
       defaultApplications = {
         "inode/directory" = ["thunar.desktop"];
         "application/pdf" = ["zathura.desktop"];
-        "image/jpeg" = ["sxiv"];
-        "image/webp" = ["sxiv -a"];
+        "image/jpeg" = ["qview.desktop"];
+        "image/webp" = ["qview.desktop"];
       };
     };
   };
