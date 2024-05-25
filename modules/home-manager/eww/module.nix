@@ -2,7 +2,7 @@
 {pkgs, ...}: {
   programs.eww = {
     enable = true;
-    configDir = "./config";
+    configDir = ./config;
   };
   home.packages = with pkgs; [
     playerctl
