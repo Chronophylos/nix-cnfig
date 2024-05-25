@@ -175,24 +175,6 @@
   # Enable polkit
   security.polkit.enable = true;
 
-  # Enable Gnome Keyring for storing secrets
-  services.gnome3.gnome-keyring.enable = true;
-
-  # Enable KDE Authentication Agent
-  systemd.user.services.polkit-kde-authentication-agent-1 = {
-    description = "KDE Authentication Agent for polkit";
-    wantedBy = ["graphical-session.target"];
-    wants = ["graphical-session.target"];
-    after = ["graphical-session.target"];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
-
   # login manager
   services.greetd = {
     enable = true;

@@ -219,11 +219,12 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "alacritty";
-    NIXOS_OZONE_WL = "1";
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    QT_QPA_PLATFORM = "wayland;xcb";
+    NIXOS_OZONE_WL = "1"; # Tell nixos Wayland is available
+    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Tell electron to check for wayland
+    QT_QPA_PLATFORM = "wayland;xcb"; # Tell qt to try wayland and then x11
   };
 
+  # Make Electron Apps use Wayland
   xdg.configFile."electron-flags.conf".text = ''
     --ozone-platform-hint=auto
     --enable-features=WebRTCPipeWireCapturer
@@ -232,6 +233,24 @@
     --ozone-platform-hint=auto
     --enable-features=WebRTCPipeWireCapturer
   '';
+
+  # Enable Keyring
+  services.gnome-keyring.enable = true;
+
+  # Enable KDE Authentication Agent
+  systemd.user.services.polkit-kde-authentication-agent-1 = {
+    description = "KDE Authentication Agent for polkit";
+    wantedBy = ["graphical-session.target"];
+    wants = ["graphical-session.target"];
+    after = ["graphical-session.target"];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
