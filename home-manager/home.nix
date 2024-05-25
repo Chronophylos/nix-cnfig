@@ -181,8 +181,11 @@
     --enable-features=WebRTCPipeWireCapturer
   '';
   xdg.configFile."code-flags.conf".text = ''
-    --ozone-platform-hint=auto
-    --enable-features=WebRTCPipeWireCapturer
+    --ozone-platform-hint=wayland
+    --gtk-version=4
+    --ignore-gpu-blocklist
+    --enable-features=TouchpadOverscrollHistoryNavigation
+    --enable-wayland-ime
   '';
 
   # Enable Keyring

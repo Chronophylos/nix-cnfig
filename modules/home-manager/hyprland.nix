@@ -4,7 +4,10 @@
     enable = true;
     settings = {
       monitor = ",preferred,auto,1.5";
-      exec-once = "${pkgs.eww}/bin/eww open bar";
+      exec-once = [
+        "${pkgs.eww}/bin/eww open bar" # open bar
+        "${pkgs.hypridle}/bin/hypridle" # run hypridle
+      ];
       input.kb_layout = "de";
       "$mod" = "SUPER";
       bind =

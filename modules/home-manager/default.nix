@@ -4,7 +4,9 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   _1password = import ./1password.nix;
+  eww = import ./eww/default.nix;
+  hypridle = import ./hypridle.nix;
   hyprland = import ./hyprland.nix;
-  eww = import ./eww/module.nix;
+  hyprlock = import ./hyprlock/default.nix;
   nushell = import ./nushell.nix;
 }
