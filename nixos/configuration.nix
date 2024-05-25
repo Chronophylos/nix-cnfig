@@ -12,10 +12,12 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
+    outputs.nixosModules._1password
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
+    inputs.hardware.nixosModules.lenovo.thinkpad.t470s # close enough
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -156,12 +158,7 @@
     neovim
     curl
     wget
-
-    # auth agent
-    polkit-kde-agent
-
-    # session
-    wev
+    git
   ];
 
   programs._1password.enable = true;
