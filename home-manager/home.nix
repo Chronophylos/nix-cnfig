@@ -13,7 +13,6 @@
     outputs.homeManagerModules.hyprland
     outputs.homeManagerModules.eww
     outputs.homeManagerModules.nushell
-    outputs.homeManagerModules.thunar
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
