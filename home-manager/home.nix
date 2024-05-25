@@ -205,6 +205,19 @@
     };
   };
 
+  xdg = {
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
+      associations.added = {
+        "inode/directory" = ["thunar.desktop"];
+      };
+      defaultApplications = {
+        "inode/directory" = ["thunar.desktop"];
+      };
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
