@@ -11,6 +11,7 @@
     # outputs.homeManagerModules.example
     outputs.homeManagerModules._1password
     outputs.homeManagerModules.hyprland
+    outputs.homeManagerModules.eww
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -231,6 +232,9 @@
     --ozone-platform-hint=auto
     --enable-features=WebRTCPipeWireCapturer
   '';
+
+  # Enable Gnome Keyring for storing secrets
+  services.gnome.gnome-keyring.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
