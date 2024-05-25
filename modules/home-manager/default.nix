@@ -7,4 +7,5 @@
   hyprland = import ./hyprland.nix;
   eww = import ./eww/module.nix;
   nushell = import ./nushell.nix;
+  thunar = import ./thunar.nix;
 }
