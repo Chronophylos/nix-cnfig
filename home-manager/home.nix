@@ -11,6 +11,8 @@
     # outputs.homeManagerModules.example
     outputs.homeManagerModules._1password
     outputs.homeManagerModules.hyprland
+    outputs.homeManagerModules.hyprlock
+    outputs.homeManagerModules.hypridle
     outputs.homeManagerModules.eww
     outputs.homeManagerModules.nushell
 

@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,1.5";
+      monitor = ",preferred,auto,1";
       exec-once = [
         "${pkgs.eww}/bin/eww open bar" # open bar
         "${pkgs.hypridle}/bin/hypridle" # run hypridle
