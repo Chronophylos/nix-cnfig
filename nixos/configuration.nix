@@ -17,7 +17,7 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
-    inputs.hardware.nixosModules.lenovo-thinkpad-t470s # close enough
+    inputs.hardware.nixosModules.lenovo-thinkpad-t470s # not T470, but close enough
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -160,14 +160,6 @@
     wget
     git
   ];
-
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    # Certain features, including CLI integration and system authentication support,
-    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = ["chrono"];
-  };
 
   # Enable polkit
   security.polkit.enable = true;

@@ -6,4 +6,5 @@
   _1password = import ./1password.nix;
   hyprland = import ./hyprland.nix;
   eww = import ./eww/module.nix;
+  nushell = import ./nushell.nix;
 }

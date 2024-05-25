@@ -73,7 +73,5 @@
     # Qt Wayland Support
     qt5.qtwayland
     qt6.qtwayland
-    # bar
-    eww
   ];
 }
