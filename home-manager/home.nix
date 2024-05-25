@@ -104,7 +104,7 @@
 
     # viewers
     zathura
-    feh
+    sxiv
     mpv
 
     # browsers
@@ -211,9 +211,15 @@
       enable = true;
       associations.added = {
         "inode/directory" = ["thunar.desktop"];
+        "application/pdf" = ["zathura.desktop"];
+        "image/jpeg" = ["sxiv"];
+        "image/webp" = ["sxiv -a"];
       };
       defaultApplications = {
         "inode/directory" = ["thunar.desktop"];
+        "application/pdf" = ["zathura.desktop"];
+        "image/jpeg" = ["sxiv"];
+        "image/webp" = ["sxiv -a"];
       };
     };
   };
