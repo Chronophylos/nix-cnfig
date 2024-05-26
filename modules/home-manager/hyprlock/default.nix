@@ -4,7 +4,10 @@
     material-symbols
   ];
 
-  xdg.dataFile."hyprlock/status.sh".source = ./status.sh;
+  xdg.dataFile."hyprlock/status.sh" = {
+    source = ./status.sh;
+    executable = true;
+  };
 
   programs.hyprlock = {
     enable = true;
