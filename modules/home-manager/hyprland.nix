@@ -6,7 +6,6 @@
       monitor = ",preferred,auto,1";
       exec-once = [
         "${pkgs.eww}/bin/eww open bar" # open bar
-        "${pkgs.hypridle}/bin/hypridle" # run hypridle
       ];
       input.kb_layout = "de";
       "$mod" = "SUPER";
@@ -14,7 +13,7 @@
         [
           ", Print, exec, grimblast copy area"
           "$mod, Return, exec, ${pkgs.alacritty}/bin/alacritty"
-          "$mod, R, exec, ${pkgs.tofi}/bin/tofi-run"
+          "$mod, R, exec, ${pkgs.tofi}/bin/tofi-drun"
         ]
         ++ (
           # workspaces

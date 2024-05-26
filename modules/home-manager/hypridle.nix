@@ -26,4 +26,5 @@
       ];
     };
   };
+  wayland.windowManager.hyprland.settings.exec-once = "${pkgs.hypridle}/bin/hypridle";
 }
